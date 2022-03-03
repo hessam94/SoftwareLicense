@@ -32,7 +32,7 @@ namespace LicenseGenerator
             {
                 if (string.IsNullOrEmpty(tx_HardwareCode.Text) || string.IsNullOrEmpty(tx_name.Text))
                 {
-                    MessageBox.Show("شناسه سیستم و نام مجوز نمی توانند خالی باشد");
+                    MessageBox.Show("LicenseName or systemId cannot be empty");
                 }
                 else
                 {
@@ -53,12 +53,12 @@ namespace LicenseGenerator
                         string path = folderBrowserDialog1.SelectedPath;
                         File.WriteAllText(path + "\\license.lic", str);
                     }
-                    MessageBox.Show("مجوز با موفقیت تولید شد");
+                    MessageBox.Show("License created succesfully");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("خطا در تولید مجوز");
+                MessageBox.Show("Error in creating License");
             }
 
         }
